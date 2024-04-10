@@ -92,7 +92,7 @@ const LoginForm: React.FC<LogInFormProps> = ({ currentUser }) => {
         onClick={handleSubmit(onSubmit)}
       />
       <p className="text-sm">
-        Don't have have an account?
+        Dont have have an account?
         <Link className="underline" href="/register">
           Sign up
         </Link>

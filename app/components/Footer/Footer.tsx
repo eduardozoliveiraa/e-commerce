@@ -27,7 +27,7 @@ const Footer = () => {
             <Link href="#">Contact</Link>
             <Link href="#">Shipping Policy</Link>
             <Link href="#">Returns & Exchanges</Link>
-            <Link href="#">FAQ's</Link>
+            <Link href="#">FAQs</Link>
           </FooterList>
           <div className="w-full md:w1/3 mb-6 md:mb-0">
             <h3 className="text-base font-bold mb-2">About us</h3>
