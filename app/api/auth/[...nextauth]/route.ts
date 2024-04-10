@@ -7,6 +7,7 @@ import bcrypt from "bcrypt";
 import { SessionStrategy } from "next-auth";
 
 const authOptions = {
+  
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
@@ -55,6 +56,7 @@ const authOptions = {
   ],
   pages: {
     signIn: "/login",
+    signOut: "/logout",
   },
   debug: process.env.NODE_ENV === "development",
   session: {
@@ -65,4 +67,4 @@ const authOptions = {
 
 const handler = NextAuth(authOptions);
 
-export default handler;
+export { authOptions, handler as GET, handler as POST };
