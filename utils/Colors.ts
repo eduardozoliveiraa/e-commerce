@@ -16,7 +16,7 @@ export const colors = [
   },
   {
     color: "Red",
-    colorCode: "#FF000",
+    colorCode: "#FF300",
     image: null,
   },
   {
