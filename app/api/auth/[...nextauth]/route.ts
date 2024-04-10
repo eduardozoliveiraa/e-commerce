@@ -7,7 +7,6 @@ import bcrypt from "bcrypt";
 import { SessionStrategy } from "next-auth";
 
 export const authOptions = {
-  
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
