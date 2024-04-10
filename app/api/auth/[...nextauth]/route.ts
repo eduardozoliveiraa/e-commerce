@@ -6,7 +6,7 @@ import prisma from "@/libs/prismadb";
 import bcrypt from "bcrypt";
 import { SessionStrategy } from "next-auth";
 
-const authOptions = {
+export const authOptions = {
   
   adapter: PrismaAdapter(prisma),
   providers: [
