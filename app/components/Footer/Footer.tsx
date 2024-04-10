@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Container from "../Container";
 import FooterList from "./FooterList";
-import { MdFacebook } from "react-icons/md";
-import {
-  AiFillInstagram,
-  AiFillTwitterCircle,
-  AiFillYoutube,
-} from "react-icons/ai";
+// import { MdFacebook } from "react-icons/md";
+// import {
+//   AiFillInstagram,
+//   AiFillTwitterCircle,
+//   AiFillYoutube,
+// } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -43,16 +43,16 @@ const Footer = () => {
             <h3 className="text-base font-bold mb-2">Follow us</h3>
             <div className="flex gap-2">
               <Link href="#">
-                <MdFacebook size={24} />
+                {/* <MdFacebook size={24} /> */}
               </Link>
               <Link href="#">
-                <AiFillTwitterCircle size={24} />
+                {/* <AiFillTwitterCircle size={24} /> */}
               </Link>
               <Link href="#">
-                <AiFillInstagram size={24} />
+                {/* <AiFillInstagram size={24} /> */}
               </Link>
               <Link href="#">
-                <AiFillYoutube size={24} />
+                {/* <AiFillYoutube size={24} /> */}
               </Link>
             </div>
           </FooterList>
