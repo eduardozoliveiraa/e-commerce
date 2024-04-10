@@ -1,45 +1,37 @@
 import { getServerSession } from "next-auth";
 import prisma from "@/libs/prismadb";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function getSession() {
-  const session = await getServerSession({
-    secret: process.env.NEXTAUTH_SECRET,
-  });
-  return session;
+  return await getServerSession(authOptions);
 }
 
-export async function getCurrentUser(session: Session) {
-  // Verifica se a sessão e o email do usuário estão presentes
-  if (!session?.user?.email) {
+export async function getCurrentUser() {
+  try {
+    const session = await getSession();
+
+    if (!session?.user?.email) {
+      return null;
+    }
+
+    const currentUser = await prisma.user.findUnique({
+      where: {
+        email: session?.user?.email,
+      },
+    });
+
+    if (!currentUser) {
+      return null;
+    }
+
+    return {
+      ...currentUser,
+      createdAt: currentUser.createdAt.toISOString(),
+      updateAt: currentUser.updateAt.toISOString(),
+      emailVerified: currentUser.emailVerified?.toISOString() || null,
+    };
+  } catch (error: any) {
+    console.log(error);
     return null;
   }
-
-  // Busca o usuário no banco de dados
-  const currentUser = await prisma.user.findUnique({
-    where: {
-      email: session.user.email,
-    },
-  });
-
-  // Retorna nulo se o usuário não for encontrado
-  if (!currentUser) {
-    return null;
-  }
-
-  // Retorna um objeto com os detalhes do usuário
- 
-}
-
-// Tipando as interfaces para melhor legibilidade
-interface Session {
-  user: {
-    email: string;
-  };
-}
-
-interface User {
-  email: string;
-  createdAt: Date;
-  updatedAt: Date;
-  emailVerified?: Date;
 }
