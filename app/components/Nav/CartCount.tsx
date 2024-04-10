@@ -2,7 +2,7 @@
 
 import { useCart } from "@/hooks/useCart";
 import { useRouter } from "next/navigation";
-import { CiShoppingCart } from "react-icons/ci";
+// import { CiShoppingCart } from "react-icons/ci";
 
 const CartCount = () => {
   const { cartTotalQty } = useCart();
@@ -10,7 +10,7 @@ const CartCount = () => {
   return (
     <div className="relative cursor-pointer" onClick={() => {}}>
       <div className="text-3xl">
-        <CiShoppingCart />
+        {/* <CiShoppingCart /> */}
       </div>
       <span className="
       absolute

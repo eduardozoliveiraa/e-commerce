@@ -21,6 +21,7 @@ export default async function handler(
 
   if (!sig) {
     return res.status(400).send("Missing the stripe signature");
+    
   }
 
   let event: Stripe.Event;

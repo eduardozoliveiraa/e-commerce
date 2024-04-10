@@ -2,12 +2,12 @@ import { IconType } from "react-icons";
 
 interface StatusProps {
   text: string;
-  icon: IconType;
+  // icon: IconType;
   bg: string;
   color: string;
 }
 
-const Status: React.FC<StatusProps> = ({ text, icon: Icon, bg, color }) => {
+const Status: React.FC<StatusProps> = ({ text, /*icon: Icon, bg*/, color }) => {
   return (
     <div
       className={`

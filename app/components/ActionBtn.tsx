@@ -1,13 +1,13 @@
 import { IconType } from "react-icons";
 
 interface ActionBtnProps {
-  icon: IconType;
+  // icon: IconType;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 }
 
 const ActionBtn: React.FC<ActionBtnProps> = ({
-  icon: Icon,
+  // icon: Icon,
   onClick,
   disabled,
 }) => {
