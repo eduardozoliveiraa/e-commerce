@@ -56,7 +56,6 @@ const authOptions = {
   ],
   pages: {
     signIn: "/login",
-    signOut: "/logout",
   },
   debug: process.env.NODE_ENV === "development",
   session: {
@@ -67,4 +66,4 @@ const authOptions = {
 
 const handler = NextAuth(authOptions);
 
-export { authOptions, handler as GET, handler as POST };
+export { handler as GET, handler as POST };
