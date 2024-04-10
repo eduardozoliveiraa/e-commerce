@@ -5,14 +5,14 @@ import { IconType } from "react-icons";
 interface CategoryInputProps {
   selected?: boolean;
   label: string;
-  Icon: IconType;
+  // Icon: IconType;
   onClick: (value: string) => void;
 }
 
 const CategoryInput: React.FC<CategoryInputProps> = ({
   selected,
   label,
-  Icon,
+  // Icon,
   onClick,
 }) => {
   return (

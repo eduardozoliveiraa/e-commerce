@@ -228,7 +228,7 @@ const AddProductForm = () => {
                   onClick={(category) => setCustomValue("category", category)}
                   selected={category == item.label}
                   label={item.label}
-                  Icon={item.icon}
+                  // Icon={item.icon}
                 />
               </div>
             );
