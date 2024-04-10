@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import AdminNavItem from "./AdminNavItem";
-import {
-  MdDashboard,
-  MdDns,
-  MdFormatListBulleted,
-  MdLibraryAdd,
-} from "react-icons/md";
+// import {
+//   MdDashboard,
+//   MdDns,
+//   MdFormatListBulleted,
+//   MdLibraryAdd,
+// } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import Container from "../Container";
 
@@ -24,28 +24,28 @@ const AdminNav = () => {
           <Link href="/admin">
             <AdminNavItem
               label="Summary"
-              icon={MdDashboard}
+              // icon={MdDashboard}
               selected={pathname === "/admin"}
             />
           </Link>
           <Link href="/admin/add-products">
             <AdminNavItem
               label="AddProducts"
-              icon={MdLibraryAdd}
+              // icon={MdLibraryAdd}
               selected={pathname === "/admin/add-products"}
             />
           </Link>
           <Link href="/admin/manage-products">
             <AdminNavItem
               label="ManageProducts"
-              icon={MdDns}
+              // icon={MdDns}
               selected={pathname === "/admin/manage-products"}
             />
           </Link>
           <Link href="/admin/manage-orders">
             <AdminNavItem
               label="ManageOrders"
-              icon={MdFormatListBulleted}
+              // icon={MdFormatListBulleted}
               selected={pathname === "/admin/manage-orders"}
             />
           </Link>

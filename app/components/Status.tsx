@@ -7,7 +7,7 @@ interface StatusProps {
   color: string;
 }
 
-const Status: React.FC<StatusProps> = ({ text, /*icon: Icon, bg*/, color }) => {
+const Status: React.FC<StatusProps> = ({ text, /*icon: Icon*/ bg, color }) => {
   return (
     <div
       className={`
@@ -22,7 +22,7 @@ const Status: React.FC<StatusProps> = ({ text, /*icon: Icon, bg*/, color }) => {
     `}
     >
       <div className="inline-flex items-center ">
-        {text} <Icon className="mt-0.5" size={15} />
+        {text} {/*<Icon className="mt-0.5" size={15} />*/}
       </div>
     </div>
   );

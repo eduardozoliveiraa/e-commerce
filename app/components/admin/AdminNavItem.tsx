@@ -2,13 +2,13 @@ import { IconType } from "react-icons";
 
 interface AdminNavItemProps {
   selected?: boolean;
-  icon: IconType;
+  // icon: IconType;
   label: string;
 }
 
 const AdminNavItem: React.FC<AdminNavItemProps> = ({
   selected,
-  icon: Icon,
+  // icon: Icon,
   label,
 }) => {
   return (
@@ -20,7 +20,7 @@ const AdminNavItem: React.FC<AdminNavItemProps> = ({
           : "border-transparent text-slate-500"
       }`}
     >
-      <Icon size={20} />
+      {/* <Icon size={20} /> */}
       <div className="font-medium text-sm text-center break-normal">
         {label}
       </div>

@@ -8,7 +8,7 @@ import { useCart } from "@/hooks/useCart";
 import { Rating } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { MdCheckCircle } from "react-icons/md";
+// import { MdCheckCircle } from "react-icons/md";
 
 interface ProductDetailsProps {
   product: any;
@@ -140,7 +140,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           <>
             <p className="mb-2 text-slate-500 flex items-center gap-1">
               <span className="text-teal-400">
-              <MdCheckCircle size={20}/>
+              {/* <MdCheckCircle size={20}/> */}
               </span>
               <span>Produto adicionado ao carrinho</span>
             </p>
