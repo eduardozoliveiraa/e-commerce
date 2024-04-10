@@ -23,7 +23,7 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
         selected ? "border-slate-500" : "border-slate-200"
       }`}
     >
-      <Icon size={30} />
+      {/* <Icon size={30} /> */}
       <div className="font-medium">{label}</div>
     </div>
   );
