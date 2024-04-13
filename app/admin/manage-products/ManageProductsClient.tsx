@@ -9,16 +9,11 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Product } from "@prisma/client";
 import axios from "axios";
 import { deleteObject, getStorage, ref } from "firebase/storage";
+import { Check, Clock4, Eye, RefreshCcw, Trash2, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import toast from "react-hot-toast";
-// import {
-//   MdCached,
-//   MdClose,
-//   MdDelete,
-//   MdDone,
-//   MdRemoveRedEye,
-// } from "react-icons/md";
+
 
 interface ManageProductsClientProps {
   products: Product[];
@@ -70,14 +65,14 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
             {params.row.inStock == true ? (
               <Status
                 text="in Stock"
-                // icon={MdDone}
+                 icon={<Check />}
                 bg="bg-teal-200"
                 color="text-teal-700"
               />
             ) : (
               <Status
                 text="Out of stock"
-                // icon={MdClose}
+                 icon={<X />}
                 bg="bg-rose-200"
                 color="text-rose-700"
               />
@@ -94,19 +89,19 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
         return (
           <div className="flex justify-between pt-2.5 gap-4 w-full">
             <ActionBtn
-              // icon={MdCached}
+               icon={<RefreshCcw />}
               onClick={() => {
                 handleToogleStock(params.row.id, params.row.inStock);
               }}
             />
             <ActionBtn
-              // icon={MdDelete}
+               icon={<Trash2 />}
               onClick={() => {
                 handleDelete(params.row.id, params.row.images);
               }}
             />
             <ActionBtn
-              // icon={MdRemoveRedEye}
+               icon={<Eye />}
               onClick={() => {
                 router.push(`product/${params.row.id}`);
               }}

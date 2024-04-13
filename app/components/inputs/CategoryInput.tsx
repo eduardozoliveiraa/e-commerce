@@ -1,18 +1,19 @@
 "use client";
 
-// import { IconType } from "react-icons";git 
+import { ReactNode } from "react";
+import { IconType } from "react-icons";
 
 interface CategoryInputProps {
   selected?: boolean;
   label: string;
-  // Icon: IconType;
+  Icon: IconType | ReactNode;
   onClick: (value: string) => void;
 }
 
 const CategoryInput: React.FC<CategoryInputProps> = ({
   selected,
   label,
-  // Icon,
+  Icon,
   onClick,
 }) => {
   return (
@@ -23,7 +24,11 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
         selected ? "border-slate-500" : "border-slate-200"
       }`}
     >
-      {/* <Icon size={30} /> */}
+      {typeof Icon === "function" ? (
+        <Icon className="mt-0.5 mr-1" size={15} />
+      ) : (
+        <span className="mt-0.5 mr-1">{Icon}</span>
+      )}
       <div className="font-medium">{label}</div>
     </div>
   );

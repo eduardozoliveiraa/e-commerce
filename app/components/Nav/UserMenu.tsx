@@ -2,12 +2,12 @@
 
 import { useCallback, useState } from "react";
 import Avatar from "../Avatar";
-// import { AiFillCaretDown } from "react-icons/ai";
 import Link from "next/link";
 import MenuItem from "./MenuItem";
 import { signOut } from "next-auth/react";
 import BackDrop from "./BackDrop";
 import { SafeUser } from "@/types";
+import { ArrowDown } from "lucide-react";
 
 interface UserMenuProps {
   currentUser: SafeUser | null;
@@ -39,7 +39,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         text-slate-700"
         >
           <Avatar src={currentUser?.image} />
-          {/* <AiFillCaretDown /> */}
+          {<ArrowDown />}
         </div>
         {isOpen && (
           <div

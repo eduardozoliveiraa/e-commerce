@@ -1,6 +1,6 @@
 "use client";
 
-// import { IconType } from "react-icons";
+import { IconType } from "react-icons";
 
 interface ButtonProps {
   label: string;
@@ -8,7 +8,7 @@ interface ButtonProps {
   outline?: boolean;
   small?: boolean;
   custom?: boolean;
-  // icon?: IconType;
+   icon?: IconType;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   outline,
   small,
   custom,
-  // icon: Icon,
+   icon: Icon,
   onClick,
 }) => {
   return (
@@ -44,7 +44,6 @@ const Button: React.FC<ButtonProps> = ({
       ${custom ? custom : ""}
     `}
     >
-      {/* {Icon && <Icon size={24} />} */}
       {label}
     </button>
   );

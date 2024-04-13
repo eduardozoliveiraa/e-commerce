@@ -1,5 +1,5 @@
+import { CircleUser } from "lucide-react";
 import Image from "next/image";
-// import { FaUserCircle } from "react-icons/fa";
 
 interface AvatarProps {
   src?: string | null | undefined;
@@ -7,18 +7,17 @@ interface AvatarProps {
 
 const Avatar: React.FC<AvatarProps> = ({ src }) => {
   if (src) {
-    return(
-          <Image
-      src={src}
-      alt="Avatar"
-      className="Rounded-full"
-      height="30"
-      width="30"
-    />
-    )
-  
+    return (
+      <Image
+        src={src}
+        alt="Avatar"
+        className="Rounded-full"
+        height="30"
+        width="30"
+      />
+    );
   }
-  // return <FaUserCircle size={24} />;
+  return <CircleUser size={26} />;
 };
 
 export default Avatar;

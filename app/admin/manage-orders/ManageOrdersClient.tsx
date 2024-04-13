@@ -7,16 +7,12 @@ import { formatPrice } from "@/utils/formatPrice";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Order, User } from "@prisma/client";
 import axios from "axios";
+import { Check, Clock4, Eye, Truck } from "lucide-react";
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import toast from "react-hot-toast";
-// import {
-//   MdAccessTimeFilled,
-//   MdDeliveryDining,
-//   MdDone,
-//   MdRemoveRedEye,
-// } from "react-icons/md";
+
 
 interface ManageOrdersClientProps {
   orders: ExtendedOrder[];
@@ -66,14 +62,14 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
             {params.row.paymentStatus == "pending" ? (
               <Status
                 text="pending"
-                // icon={MdAccessTimeFilled}
+                icon={<Clock4 />}
                 bg="bg-slate-200"
                 color="text-slate-700"
               />
             ) : params.row.paymentStatus == "complete" ? (
               <Status
                 text="completed"
-                // icon={MdDone}
+                icon={<Check />}
                 bg="bg-green-200"
                 color="text-green-700"
               />
@@ -94,21 +90,21 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
             {params.row.deliveryStatus == "pending" ? (
               <Status
                 text="pending"
-                // icon={MdAccessTimeFilled}
+                icon={<Clock4 />}
                 bg="bg-slate-200"
                 color="text-slate-700"
               />
             ) : params.row.deliveryStatus == "dispatched" ? (
               <Status
                 text="dispatched"
-                // icon={MdDeliveryDining}
+                icon={<Truck />}
                 bg="bg-purple-200"
                 color="text-purple-700"
               />
             ) : params.row.deliveryStatus == "delivered" ? (
               <Status
                 text="delivered"
-                // icon={MdDone}
+                icon={<Check />}
                 bg="bg-green-200"
                 color="text-green-700"
               />
@@ -133,19 +129,19 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         return (
           <div className="flex justify-between pt-2.5 gap-4 w-full ">
             <ActionBtn
-              // icon={MdDeliveryDining}
+              icon={<Truck />}
               onClick={() => {
                 handleDispatch(params.row.i);
               }}
             />
             <ActionBtn
-              // icon={MdDone}
+              icon={<Check />}
               onClick={() => {
                 handleDeliver(params.row.id);
               }}
             />
             <ActionBtn
-              // icon={MdRemoveRedEye}
+              icon={<Eye />}
               onClick={() => {
                 router.push(`order/${params.row.id}`);
               }}

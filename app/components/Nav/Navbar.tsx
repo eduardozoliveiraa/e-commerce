@@ -1,12 +1,9 @@
 import Link from "next/link";
 import Container from "../Container";
-import { Redressed } from "next/font/google";
 import CartCount from "./CartCount";
 import UserMenu from "./UserMenu";
 import { getCurrentUser } from "@/actions/getCurrentUser";
-import { useSession } from "next-auth/react";
 
-const redressed = Redressed({ subsets: ["latin"], weight: ["400"] });
 
 const Navbar = async () => {
 

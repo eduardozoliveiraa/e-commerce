@@ -2,13 +2,13 @@
 
 import { useCart } from "@/hooks/useCart";
 import Link from "next/link";
-// import { MdArrowBack } from "react-icons/md";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
 import ItemContent from "./ItemContent";
 import { formatPrice } from "@/utils/formatPrice";
 import { SafeUser } from "@/types";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 
 interface CartClientProps {
   currentUser: SafeUser | null;
@@ -40,7 +40,7 @@ const CartClient: React.FC<CartClientProps> = (currentUser) => {
           mt-2
           "
           >
-            {/* <MdArrowBack /> */}
+            {<ArrowLeft />}
             <span>Start shopping</span>
           </Link>
         </div>
@@ -101,7 +101,7 @@ const CartClient: React.FC<CartClientProps> = (currentUser) => {
             href={"/"}
             className="text-slate-500 flex items-center gap-1 mt-2"
           >
-            {/* <MdArrowBack /> */}
+            {<ArrowLeft />}
             <span>Continue shopping</span>
           </Link>
         </div>

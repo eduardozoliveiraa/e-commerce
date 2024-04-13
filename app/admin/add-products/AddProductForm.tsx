@@ -19,7 +19,6 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-import { error } from "console";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -228,7 +227,7 @@ const AddProductForm = () => {
                   onClick={(category) => setCustomValue("category", category)}
                   selected={category == item.label}
                   label={item.label}
-                  // Icon={item.icon}
+                  Icon={() => <item.icon />}
                 />
               </div>
             );

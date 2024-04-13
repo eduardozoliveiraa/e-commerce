@@ -1,33 +1,32 @@
-// import { AiFillPhone, AiOutlineDesktop, AiOutlineLaptop } from "react-icons/ai";
-// import { MdOutlineKeyboard, MdStorefront, MdTv, MdWatch } from "react-icons/md";
+import { Keyboard, Laptop, LaptopMinimal, Monitor, Phone, Store, Watch } from 'lucide-react';
 
 export const categories = [
   {
     label: "All",
-    // icon: MdStorefront,
+     icon: Store ,
   },
   {
     label: "Phone",
-    // icon: AiFillPhone,
+     icon: Phone ,
   },
   {
     label: "Laptop",
-    // icon: AiOutlineLaptop,
+     icon: Laptop ,
   },
   {
     label: "Desktop",
-    // icon: AiOutlineDesktop,
+     icon: LaptopMinimal,
   },
   {
     label: "Watch",
-    // icon: MdWatch,
+     icon: Watch,
   },
   {
     label: "Tv",
-    // icon: MdTv,
+     icon: Monitor,
   },
   {
     label: "Acessories",
-    // icon: MdOutlineKeyboard,
+     icon: Keyboard,
   },
 ];

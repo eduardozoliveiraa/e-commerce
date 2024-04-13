@@ -1,8 +1,9 @@
 "use client";
 
 import { useCart } from "@/hooks/useCart";
+import { ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
-// import { CiShoppingCart } from "react-icons/ci";
+
 
 const CartCount = () => {
   const { cartTotalQty } = useCart();
@@ -10,7 +11,7 @@ const CartCount = () => {
   return (
     <div className="relative cursor-pointer" onClick={() => {}}>
       <div className="text-3xl">
-        {/* <CiShoppingCart /> */}
+        { <ShoppingCart size={30}/> }
       </div>
       <span className="
       absolute
