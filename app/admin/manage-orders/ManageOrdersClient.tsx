@@ -83,7 +83,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
     {
       field: "deliveryStatus",
       headerName: "Delivery Status",
-      width: 120,
+      width: 130,
       renderCell: (params) => {
         return (
           <div>
@@ -131,7 +131,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
             <ActionBtn
               icon={<Truck />}
               onClick={() => {
-                handleDispatch(params.row.i);
+                handleDispatch(params.row.id);
               }}
             />
             <ActionBtn
@@ -151,7 +151,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
       },
     },
   ];
-  console.log(orders);
+
   const handleDispatch = useCallback((id: string) => {
     axios
       .put("/api/order", {
