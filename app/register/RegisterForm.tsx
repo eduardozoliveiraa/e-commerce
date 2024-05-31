@@ -7,7 +7,6 @@ import Input from "../components/inputs/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Button from "../components/Button";
 import Link from "next/link";
-// import { AiOutlineGoogle } from "react-icons/ai";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
@@ -30,6 +29,21 @@ const RegisterForm = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      toast.error("Formato de email inválido");
+      return;
+    }
+
+    const passwordRegex =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
+    if (!passwordRegex.test(data.password)) {
+      toast.error(
+        "a senha deve conter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial"
+      );
+      return;
+    }
+
     setIsLoading(true);
 
     axios
@@ -46,7 +60,7 @@ const RegisterForm = () => {
             router.push("/cart");
             console.log("Redirecting to /cart");
             router.refresh();
-            toast.success("logged in");
+            toast.success("Logged in");
           }
 
           if (callback?.error) {
@@ -54,7 +68,7 @@ const RegisterForm = () => {
           }
         });
       })
-      .catch(() => toast.error("deu merda"))
+      .catch(() => toast.error("Something went wrong"))
       .finally(() => {
         setIsLoading(false);
       });
@@ -65,8 +79,7 @@ const RegisterForm = () => {
       <Heading title="Sign up" />
       <Button
         outline
-        label=" Continue with google"
-        // icon={AiOutlineGoogle}
+        label="Continue with Google"
         onClick={() => {
           signIn();
         }}

@@ -13,4 +13,4 @@ const NullData: React.FC<NullDataProps> = ({ title }) => {
   );
 };
 
-export default NullData
+export default NullData;

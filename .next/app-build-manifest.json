@@ -41,15 +41,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/admin/manage-orders/page.js"
     ],
-    "/product/[productId]/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/product/[productId]/page.js"
-    ],
-    "/checkout/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/checkout/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
