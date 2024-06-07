@@ -1,3 +1,5 @@
+'use server'
+
 import Stripe from "stripe";
 import prisma from "@/libs/prismadb";
 import { NextResponse } from "next/server";
