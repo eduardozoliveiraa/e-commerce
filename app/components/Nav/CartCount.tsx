@@ -7,13 +7,15 @@ import { useRouter } from "next/navigation";
 
 const CartCount = () => {
   const { cartTotalQty } = useCart();
-  const router = useRouter;
+  const router = useRouter();
   return (
-    <div className="relative cursor-pointer" onClick={() => {}}>
-      <div className="text-3xl">
-        { <ShoppingCart size={30}/> }
-      </div>
-      <span className="
+    <div
+      className="relative cursor-pointer"
+      onClick={() => router.push("/cart")} 
+    >
+      <div className="text-3xl">{<ShoppingCart size={30} />}</div>
+      <span
+        className="
       absolute
       top-[-10px]
       right-[-10px]
@@ -26,7 +28,10 @@ const CartCount = () => {
       items-center
       justify-center
       text-sm
-      ">{cartTotalQty}</span>
+      "
+      >
+        {cartTotalQty}
+      </span>
     </div>
   );
 };

@@ -3,8 +3,13 @@ import Container from "./components/Container";
 import HomeBanner from "./components/HomeBanner";
 import { truncateText } from "@/utils/truncateText";
 import ProductCard from "./components/products/ProductCard";
+import { IProductParams } from "@/actions/getProducts";
 
-export default function Home() {
+interface HomeProps {
+  searchParams: IProductParams;
+}
+
+export default async function Home({ searchParams }: HomeProps) {
   return (
     <div className="p-8">
       <Container>

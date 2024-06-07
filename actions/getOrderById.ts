@@ -10,7 +10,7 @@ export default async function getOrderbyId(params: IParams) {
 
     const order = await prisma.order.findUnique({
       where: {
-        id: orderId
+        id: orderId,
       },
     });
 
