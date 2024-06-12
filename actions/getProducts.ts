@@ -37,7 +37,7 @@ export default async function getProducts(params: IProductParams) {
       include: {
         reviews: {
           include: {
-            User: true,
+            user: true,
           },
           orderBy: {
             createDate: "desc",
